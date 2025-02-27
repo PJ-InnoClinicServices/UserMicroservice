@@ -8,6 +8,5 @@ public static class AssemblyRegistration
     {
         services.AddControllers()
             .AddApplicationPart(typeof(DoctorController).Assembly);
-        // .AddApplicationPart(typeof(PatientController).Assembly);
     }
 }

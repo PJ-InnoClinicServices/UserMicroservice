@@ -10,9 +10,5 @@ public static class DbContextRegistration
         // doctors database
         services.AddDbContext<DoctorsDbContext>(options =>
             options.UseNpgsql(configuration.GetConnectionString("DoctorsDefaultConnection")));
-        
-        // patients database
-       // services.AddDbContext<PatientsDbContext>(options =>
-       //      options.UseNpgsql(configuration.GetConnectionString("PatientsDefaultConnection")));
     }
 }
