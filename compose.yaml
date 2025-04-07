@@ -1,0 +1,23 @@
+﻿services:
+  startup:
+    image: startup
+    build:
+      context: .
+      dockerfile: Startup/Dockerfile
+    ports:
+      - 8086:8080
+  
+  database:
+    image: postgres:latest
+    container_name: doctors
+    environment:
+      - POSTGRES_DB=doctors
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
+    volumes:
+      - doctors_volume:/var/lib/postgresql/data
+    ports:
+      - 5434:5432
+
+volumes:
+  doctors_volume:

@@ -4,10 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 using Shared.DTOs;
 
 namespace Doctors.WebAPI.Controllers;
-
-[Route("api/[controller]")]
+[Route("api/doctors")]
 [ApiController]
-public class DoctorController(IDoctorService doctorService) : ControllerBase
+public class DoctorsController(IDoctorService doctorService) : ControllerBase
 {
     [HttpGet]
     [ProducesResponseType(typeof(IEnumerable<DoctorEntity>), 200)]  
