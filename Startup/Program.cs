@@ -1,3 +1,4 @@
+using Doctors.Infrastructure;
 using Startup.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,8 @@ builder.Services.AddDbContexts(builder.Configuration);
 MapperRegistration.AddTinyMapper(builder.Services);
 builder.Services.AddServices();
 builder.Services.AddAssemblies();
+builder.Services.AddMassTransitServices();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
