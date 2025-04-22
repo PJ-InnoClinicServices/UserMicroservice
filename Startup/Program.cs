@@ -18,7 +18,8 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment()  || app.Environment.EnvironmentName == "Container")
 {
-    app.UseSwagger();
+    app.UseSwagger(options => options.OpenApiVersion =
+        Microsoft.OpenApi.OpenApiSpecVersion.OpenApi2_0);
     app.UseSwaggerUI();
     app.UseDeveloperExceptionPage();
     app.ApplyMigrations();
