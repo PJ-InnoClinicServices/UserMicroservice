@@ -9,6 +9,7 @@ public static class DbContextRegistration
     {
         // doctors database
         services.AddDbContext<DoctorsDbContext>(options =>
-            options.UseNpgsql(configuration.GetConnectionString("DoctorsDefaultConnection")));
+            options.UseNpgsql(configuration.GetConnectionString("DoctorsDefaultConnection"),
+                npgsqlOptions => { npgsqlOptions.MigrationsHistoryTable("__EFMigrationsHistory_Doctors"); }));
     }
 }
