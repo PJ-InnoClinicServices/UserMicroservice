@@ -7,6 +7,6 @@ public static class AssemblyRegistration
     public static void AddAssemblies(this IServiceCollection services)
     {
         services.AddControllers()
-            .AddApplicationPart(typeof(DoctorsController).Assembly);
+            .AddApplicationPart(typeof(DoctorController).Assembly);
     }
 }
