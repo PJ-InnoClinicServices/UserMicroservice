@@ -1,0 +1,10 @@
+﻿services:
+  startup:
+    image: users-microservice
+    build:
+      context: .
+      dockerfile: Startup/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=env
+      - JWT_SigningKey=key
+      - NEON_DB_PASSWORD=password
