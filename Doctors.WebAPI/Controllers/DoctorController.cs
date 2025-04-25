@@ -5,7 +5,7 @@ using Shared.DTOs;
 
 namespace Doctors.WebAPI.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/doctors")]
 [ApiController]
 public class DoctorController(IDoctorService doctorService) : ControllerBase
 {
